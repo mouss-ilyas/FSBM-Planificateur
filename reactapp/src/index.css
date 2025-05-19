@@ -1,0 +1,89 @@
+* {
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+a {
+  color: black  ;
+  text-decoration: none;
+}
+
+.prancipal-link li {
+  box-shadow: 4px 1px 7px #060606;
+  width: 250px;
+  height: 250px;
+  background-color: #dfdfdf69;
+  text-align: center;
+  align-content: center;
+}
+
+/* Style général pour la page de consultation */
+.section-content {
+  background-color: #f9f9f9; /* Couleur de fond douce */
+  border-radius: 8px; /* Bords arrondis */
+  max-width: 700px; /* Largeur maximale */
+  margin: 20px auto; /* Centrage horizontal avec marge verticale */
+  padding: 20px; /* Espacement intérieur */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif; 
+}
+
+  /* Style pour le bouton */
+  .section-content button {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #007bff; 
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  /* Effet au hover */
+  .section-content button:hover {
+    background-color: #003975;
+    box-shadow: 0 4px 8px rgba(11, 10, 10, 0.93);
+  }
+
+  /* Labels */
+  .section-content label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  /* Selects */
+  .section-content select {
+    margin: 6px 0;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Change le style au focus */
+  .section-content select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+  }
+
+.vanta-canvas{
+  position: fixed !important;
+}
+
+.checkbox-container input{
+  width: 50px !important;
+}

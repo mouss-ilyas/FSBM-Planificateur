@@ -1,0 +1,50 @@
+.les-liens {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.les-liens div{
+height: 60px;
+background-color: #ff55ec47;
+margin: 5px;
+border-radius: 6px;
+text-align: center;
+color: white;
+align-content: center;
+}
+
+ input{
+    width: 100%;
+}
+
+ h2 strong  {
+color: blueviolet;
+}
+
+.salles label{
+    width: 100%;
+    
+}
+
+.teacherinfo label{
+    width: 100%;
+    margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+
+/* Availability Component Styles */
+.availability-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    font-family: 'Arial', sans-serif;
+  }
+
+.checkbox-container input{
+    width: 50px !important;
+}

@@ -1,0 +1,8 @@
+day,period,class_id,room_id,teacher_id,assign_id,module_name,type_,grp_number
+1,1,1,15,2,13,aaa,1,aaa
+1,2,3,1,2,8,qsd,2,grp_0
+2,1,2,14,3,12,test,2,grp_0
+2,3,7,7,3,10,QSDF,2,grp_0
+3,3,5,10,4,11,qsdfq,1,qsdfq
+5,5,1,1,4,9,aze,2,grp_0
+5,5,7,20,2,14,wx,1,wx

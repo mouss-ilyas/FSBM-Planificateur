@@ -1,0 +1,24 @@
+
+  /* Titre centré */
+  .consultation-page h4 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #333;
+  }
+  
+  /* Style pour la liste non ordonnée */
+  .consultation-page ul {
+    list-style: none; /* Supprime les puces */
+    padding: 0;
+    margin: 0 0 20px 0;
+  }
+  
+  /* Style pour chaque élément de la liste */
+  .consultation-page li {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+  
