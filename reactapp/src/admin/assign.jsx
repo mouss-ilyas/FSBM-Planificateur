@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./assign.css";
+import { API_URL } from "./../config";
 function Assignments() {
   const [assignments, setAssignments] = useState([]);
   const [teachers, setTeachers] = useState([]);
@@ -15,9 +16,9 @@ function Assignments() {
   const [filterClass, setFilterClass] = useState("");
 
   useEffect(() => {
-    fetchData("http://127.0.0.1:8000/teachers/", setTeachers);
-    fetchData("http://127.0.0.1:8000/admin/classes/", setClasses);
-    fetchData("http://127.0.0.1:8000/admin/assignments/", setAssignments);
+    fetchData(`${API_URL}/teachers/`, setTeachers);
+    fetchData(`${API_URL}/admin/classes/`, setClasses);
+    fetchData(`${API_URL}/admin/assignments/`, setAssignments);
   }, []);
 
   const fetchData = async (url, setter) => {
@@ -38,8 +39,8 @@ function Assignments() {
     e.preventDefault();
     const method = editing ? "PUT" : "POST";
     const url = editing
-      ? `http://127.0.0.1:8000/admin/assignments/${editing.id}`
-      : "http://127.0.0.1:8000/admin/assignments/";
+      ? `${API_URL}/admin/assignments/${editing.id}`
+      : `${API_URL}/admin/assignments/`;
 
     const options = {
       method,
@@ -70,7 +71,7 @@ function Assignments() {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://127.0.0.1:8000/admin/assignments/${id}`, {
+      await fetch(`${API_URL}/admin/assignments/${id}`, {
         method: "DELETE",
       });
       setAssignments(assignments.filter((a) => a.id !== id));

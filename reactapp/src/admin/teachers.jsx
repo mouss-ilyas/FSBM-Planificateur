@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TeacherInfo from "../prof/TeacherInfo";
 import AddTeacherForm from "./addteacher";
+import { API_URL } from "./../config";
 const Teachers = () => {
   const [teachersinfo, setTeachersInfo] = useState([]);
   const [message, setMessage] = useState("");
@@ -9,7 +10,7 @@ const Teachers = () => {
   useEffect(() => {
     const fetchTeachers = async () => {
       try {
-        const response = await fetch(`http://127.0.0.1:8000/teachers/`);
+        const response = await fetch(`${API_URL}/teachers/`);
         const data = await response.json();
 
         if (response.ok) {

@@ -73,7 +73,7 @@ const TeacherInfo = ({teacherId}) => {
         <div className="teacherinfo  ">
             <div className="availability-container">
             <h3 className="availability-title text-center"> a) modifier les informations de l'enseignement</h3>
-            {message && <p>{message}</p>}
+            <p style={{color:"green"}}>{message && <p>{message}</p>}</p>
             <form onSubmit={handleTeacherSubmit}>
                 <div>
                     <label>Nom:</label>

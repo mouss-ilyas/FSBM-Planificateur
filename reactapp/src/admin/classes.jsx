@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Table from "../tableconstract/tableconstract";
-
+import { API_URL } from "./../config";
 const Classes = () => {
     const [classes, setClasses] = useState([]);
     const [branches, setBranches] = useState([]);
@@ -24,7 +24,7 @@ const Classes = () => {
     // Fetch branches from the API
     const fetchBranches = async () => {
         try {
-            const response = await fetch("http://127.0.0.1:8000/admin/branche/", {
+            const response = await fetch(`${API_URL}/admin/branche/`, {
                 method: "GET",
                 headers: { Authorization: `Bearer ${token}` },
             });
@@ -42,7 +42,7 @@ const Classes = () => {
     // Fetch classes from the API
     const fetchClasses = async () => {
         try {
-            const response = await fetch("http://127.0.0.1:8000/admin/classes/", {
+            const response = await fetch(`${API_URL}/admin/classes/`, {
                 method: "GET",
                 headers: { Authorization: `Bearer ${token}` },
             });
@@ -65,7 +65,7 @@ const Classes = () => {
     // Handle form submission for creating a new class
     const createClass = async () => {
         try {
-            const response = await fetch("http://127.0.0.1:8000/admin/classes/", {
+            const response = await fetch(`${API_URL}/admin/classes/`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -91,7 +91,7 @@ const Classes = () => {
         if (!selectedClass) return;
 
         try {
-            const response = await fetch(`http://127.0.0.1:8000/admin/classes/${selectedClass}`, {
+            const response = await fetch(`${API_URL}/admin/classes/${selectedClass}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -116,7 +116,7 @@ const Classes = () => {
         if (!selectedClass) return;
 
         try {
-            const response = await fetch(`http://127.0.0.1:8000/admin/classes/${selectedClass}`, {
+            const response = await fetch(`${API_URL}/admin/classes/${selectedClass}`, {
                 method: "DELETE",
                 headers: { Authorization: `Bearer ${token}` },
             });
@@ -150,7 +150,7 @@ const Classes = () => {
    <div>
          <div>
          <h2 className="text-center "> <strong>  <q> Gestion des class </q> </strong> </h2>
-         {message && <p style={{ color: "red" }}>{message}</p>}
+         {message && <p style={{ color: "green" }}>{message}</p>}
 
             {/* Add Class Form */}
             <div>

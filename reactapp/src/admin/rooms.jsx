@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Table from "../tableconstract/tableconstract";
-
+import { API_URL } from "./../config";
 const Rooms = () => {
     const [rooms, setRooms] = useState([]);
     const [message, setMessage] = useState("");
@@ -26,7 +26,7 @@ const Rooms = () => {
 
     const fetchRooms = async () => {
         try {
-            const response = await fetch("http://127.0.0.1:8000/admin/rooms/", {
+            const response = await fetch(`${API_URL}/admin/rooms/`, {
                 method: "GET",
                 headers: { Authorization: `Bearer ${token}` },
             });
@@ -79,7 +79,7 @@ const Rooms = () => {
 
     const createRoom = async () => {
         try {
-            const response = await fetch("http://127.0.0.1:8000/admin/rooms/", {
+            const response = await fetch(`${API_URL}/admin/rooms/`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -104,7 +104,7 @@ const Rooms = () => {
         if (!selectedRoom) return;
 
         try {
-            const response = await fetch(`http://127.0.0.1:8000/admin/rooms/${selectedRoom}`, {
+            const response = await fetch(`${API_URL}/admin/rooms/${selectedRoom}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -128,7 +128,7 @@ const Rooms = () => {
         if (!selectedRoom) return;
 
         try {
-            const response = await fetch(`http://127.0.0.1:8000/admin/rooms/${selectedRoom}`, {
+            const response = await fetch(`${API_URL}/admin/rooms/${selectedRoom}`, {
                 method: "DELETE",
                 headers: { Authorization: `Bearer ${token}` },
             });

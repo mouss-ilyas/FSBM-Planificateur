@@ -49,7 +49,7 @@
   .schedule-error {
     text-align: center;
     padding: 40px;
-    color: #dc2626;
+    color: green !important;
     font-size: 16px;
     background-color: #fee2e2;
     border-radius: 8px;

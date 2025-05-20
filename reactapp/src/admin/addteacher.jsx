@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { API_URL } from "./../config";
 function AddTeacherForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -14,12 +14,13 @@ const jwtToken = localStorage.getItem("jwt_token");
     setError('');
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/admin/add_teacher', {
+      const response = await fetch(`${API_URL}/admin/add_teacher`, {
         method: 'POST',
 
-            headers: {
-                "Authorization": `Bearer ${jwtToken}`,
-            },
+        headers: {
+          "Authorization": `Bearer ${jwtToken}`,
+          "Content-Type": "application/json", // Added missing header
+      },
 
         
         body: JSON.stringify({

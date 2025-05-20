@@ -1,6 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 import Table from "../tableconstract/tableconstract";
 import "./consuler.css"
+
+import { API_URL } from "./../config";
 const Consulter = () => {
   const classRef = useRef(null);
   const [selectedLevel, setSelectedLevel] = useState("");
@@ -9,7 +11,7 @@ const Consulter = () => {
 
   // Fetch classes from backend
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/admin/classes/")
+    fetch(`${API_URL}/admin/classes/`)
       .then((response) => response.json())
       .then((data) => setClasses(data))
       .catch((error) => console.error("Error fetching classes:", error));

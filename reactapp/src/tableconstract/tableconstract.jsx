@@ -1,6 +1,6 @@
 import "./tablecontract.css"
 import { useEffect, useState } from "react";
-
+import { API_URL } from "./../config";
 const Table = ({ type, id }) => {
   const [classesNames, setClassesNames] = useState({});
   const [teachersNames, setTeachersNames] = useState({});
@@ -12,7 +12,7 @@ const Table = ({ type, id }) => {
 
   // Fetch classes
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/admin/classes/")
+    fetch(`${API_URL}/admin/classes/`)
       .then((response) => {
         if (!response.ok) throw new Error("Failed to fetch classes");
         return response.json();
@@ -32,7 +32,7 @@ const Table = ({ type, id }) => {
     
   // Fetch teachers
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/teachers/")
+    fetch(`${API_URL}/teachers/`)
       .then((response) => {
         if (!response.ok) throw new Error("Failed to fetch teachers");
         return response.json();
@@ -52,7 +52,7 @@ const Table = ({ type, id }) => {
   
   // Fetch rooms
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/admin/rooms/")
+    fetch(`${API_URL}/admin/rooms/`)
       .then((response) => {
         if (!response.ok) throw new Error("Failed to fetch rooms");
         return response.json();
@@ -73,7 +73,7 @@ const Table = ({ type, id }) => {
   // Fetch full schedule
   useEffect(() => {
     setLoading(true);
-    fetch("http://127.0.0.1:8000/get_schedule")
+    fetch(`${API_URL}/get_schedule`)
       .then((response) => {
         if (!response.ok) throw new Error("Failed to fetch schedule");
         return response.json();
@@ -168,7 +168,7 @@ const Table = ({ type, id }) => {
   if (error) {
     return (
       <div className="schedule-container">
-        <div className="schedule-error">{error}</div>
+        <div  className="schedule-error ">{error}</div>
       </div>
     );
   }

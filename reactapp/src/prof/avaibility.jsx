@@ -1,5 +1,6 @@
 import "./avaibility.css"
 import React, { useState, useEffect } from "react";
+import { API_URL } from "./../config";
 
 const Availability = ({ teacher_id }) => {
     const [availability, setAvailability] = useState([]);
@@ -11,7 +12,7 @@ const Availability = ({ teacher_id }) => {
         const fetchAvailability = async () => {
             setLoading(true);
             try {
-                const response = await fetch(`http://127.0.0.1:8000/teachers/teacher_availability/${teacher_id}`, {
+                const response = await fetch(`${API_URL}/teachers/teacher_availability/${teacher_id}`, {
                     headers: { "Authorization": `Bearer ${token}` }
                 });
                 const data = await response.json();
@@ -44,7 +45,7 @@ const Availability = ({ teacher_id }) => {
 
             try {
                 const response = await fetch(
-                    `http://127.0.0.1:8000/teachers/teacher_availability/${teacher_id}/${availabilityToDelete.id}`,
+                    `${API_URL}/teachers/teacher_availability/${teacher_id}/${availabilityToDelete.id}`,
                     {
                         method: "DELETE",
                         headers: { "Authorization": `Bearer ${token}` },
@@ -65,7 +66,7 @@ const Availability = ({ teacher_id }) => {
             }
         } else {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/teachers/teacher_availability/${teacher_id}`, {
+                const response = await fetch(`${API_URL}/teachers/teacher_availability/${teacher_id}`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

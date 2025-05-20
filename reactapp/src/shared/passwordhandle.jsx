@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import { API_URL } from "./../config";
 const UpdatePassword = () => {
     const [newPassword, setNewPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -23,7 +24,7 @@ const UpdatePassword = () => {
 
         try {
             const response = await fetch(
-                `http://127.0.0.1:8000/teachers/password/${teacherId}`,
+                `${API_URL}/teachers/password/${teacherId}`,
                 {
                     method: "PUT",
                     headers: {
