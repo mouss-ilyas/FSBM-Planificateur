@@ -52,10 +52,8 @@ def update_branche(branche_id: int, name: str, n:int,db: Session = Depends(get_d
     branche = db.query(Branche).filter(Branche.id == branche_id).first()
     if not branche:
         raise HTTPException(status_code=400, detail="Branche not found")
-    
     branche.name = name
     branche.number_of_years=n
     db.commit()
     db.refresh(branche)
-    
     return {"success": True, "branche": {"id": branche.id, "name": branche.name}}

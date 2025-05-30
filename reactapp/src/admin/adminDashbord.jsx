@@ -1,4 +1,5 @@
 import { Route, Routes, Link } from "react-router-dom";
+import { API_URL } from "./../config";
 import Rooms from "./rooms";
 import Teachers from "./teachers";
 import Classes from "./classes";
@@ -10,7 +11,7 @@ const AdminDashbord = () => {
 
   const handleClick = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/schedule  ", {
+      const response = await fetch(`${API_URL}/schedule`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
       });

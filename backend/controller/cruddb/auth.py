@@ -6,10 +6,7 @@ from passlib.context import CryptContext
 from fastapi.security import OAuth2PasswordBearer
 from jose import JWTError, jwt
 from datetime import datetime, timedelta
-class AddTeacherRequest(BaseModel):
-    name: str
-    email: str
-    password: str
+
 
 # Secret key for encoding and decoding the JWT (make sure to keep this safe)
 SECRET_KEY = "code@hhh.com///sat,??pasword"
@@ -77,7 +74,7 @@ def is_admin(db: Session = Depends(get_db), teacher_id: int = Depends(get_teache
 
 
 # Function to create JWT token
-def create_access_token(data: dict, expires_delta: timedelta = timedelta(minutes=30)):
+def create_access_token(data: dict, expires_delta: timedelta = timedelta(minutes=1000)):
     to_encode = data.copy()
     expire = datetime.utcnow() + expires_delta
     to_encode.update({"exp": expire})
